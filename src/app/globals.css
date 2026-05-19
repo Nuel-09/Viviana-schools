@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #ecfdf5;
+  --color-brand-100: #d1fae5;
+  --color-brand-200: #a7f3d0;
+  --color-brand-300: #6ee7b7;
+  --color-brand-400: #34d399;
+  --color-brand-500: #10b981;
+  --color-brand-600: #059669;
+  --color-brand-700: #047857;
+  --color-brand-800: #065f46;
+  --color-brand-900: #064e3b;
+  --color-brand-950: #022c22;
+
+  --color-accent-400: #fbbf24;
+  --color-accent-500: #f59e0b;
+  --color-accent-600: #d97706;
+
+  --font-sans: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+}
+
+@layer base {
+  :root {
+    --header-height: 4rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-slate-800 antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-brand-200 text-brand-900;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24;
+  }
+
+  .container-narrow {
+    @apply mx-auto max-w-6xl;
+  }
+
+  .gradient-hero {
+    background: linear-gradient(
+      135deg,
+      var(--color-brand-900) 0%,
+      var(--color-brand-700) 45%,
+      var(--color-brand-600) 100%
+    );
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  .header-bar {
+    height: var(--header-height);
+    min-height: var(--header-height);
+  }
+}
